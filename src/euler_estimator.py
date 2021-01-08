@@ -1,11 +1,11 @@
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 
 class EulerEstimator:
   def __init__(self, derivative):
     self.derivative = derivative
 
   def calc_derivative_at_point(self, point):
-    return self.derivative(point[0])
+    return {key:self.derivative(point[0]) for key in self.derivative}
   
   def step_forward(self, point, step_size):
     point1 = point[0]+step_size
@@ -22,15 +22,15 @@ class EulerEstimator:
       output_list.append(curr_point)
     return output_list
 
-  def plot(self, point, step_size, num_steps):
-    points = self.calc_estimated_points(point, step_size, num_steps)
-    x_list = []
-    y_list = []
-    for pair in points:
-      x_list.append(pair[0])
-      y_list.append(pair[1])
-    plt.style.use('bmh')
-    plt.plot(x_list, y_list)
-    plt.title('Euler Estimator')
-    plt.savefig('euler.png')
+  # def plot(self, point, step_size, num_steps):
+  #   points = self.calc_estimated_points(point, step_size, num_steps)
+  #   x_list = []
+  #   y_list = []
+  #   for pair in points:
+  #     x_list.append(pair[0])
+  #     y_list.append(pair[1])
+  #   plt.style.use('bmh')
+  #   plt.plot(x_list, y_list)
+  #   plt.title('Euler Estimator')
+  #   plt.savefig('euler.png')
 
