@@ -11,7 +11,8 @@ class EulerEstimator:
     point1 = point[0]+step_size
     deriv = self.calc_derivative_at_point(point)
     print('deriv', deriv)
-    point2 = {point[1]+deriv[key]*step_size for key in deriv}
+    print('point1', point)
+    point2 = {key:point[1][key]+deriv[key]*step_size for key in deriv}
     return (point1, point2)
   
   def calc_estimated_points(self, point, step_size, num_steps):
