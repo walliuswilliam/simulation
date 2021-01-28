@@ -52,6 +52,7 @@ print('passed')
 
 print('testing step forward...')
 point_3 = euler.step_forward(point = point_2, step_size = -0.5)
+point_3 = (point_3[0], {key: round(value, 5) for key, value in point_3[1].items()})
 assert point_3 == (-0.4, {'A': -0.45, 'B': -0.05, 'C': 0})
 print('passed')
 
@@ -63,3 +64,10 @@ assert euler.calc_estimated_points(point=point_3, step_size=2, num_steps=3) == [
    (5.6, {'A': 13.85, 'B': 2.35, 'C': -11.8}) # after 3rd step
 ]
 print('passed')
+
+
+
+
+
+
+
