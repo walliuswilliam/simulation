@@ -26,6 +26,7 @@ class EulerEstimator:
     return output_list
 
   def plot(self, point, step_size, num_steps):
+    plt.style.use('bmh')
     points = self.calc_estimated_points(point, step_size, num_steps)
     legend = []
     for variable in points[0][1]:
@@ -35,7 +36,7 @@ class EulerEstimator:
       legend.append(variable)
 
     plt.legend(legend)
-    plt.style.use('bmh')
+    
     plt.title('Euler Estimator')
     plt.savefig('euler.png')
 
