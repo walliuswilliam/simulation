@@ -34,9 +34,6 @@ class EulerEstimator:
       y_list = [y[1][variable] for y in points]
       plt.plot(x_list, y_list)
       legend.append(variable)
-
     plt.legend(legend)
-    
     plt.title('Euler Estimator')
     plt.savefig('euler.png')
-
